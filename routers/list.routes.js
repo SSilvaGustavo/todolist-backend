@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
 router.get("/tarefa/:id", async (req, res) => {
   await List.findOne({ _id: id(req) })
     .then((list) => {
-      res.status(202).send(`Tarefa encontrado com sucesso
+      res.status(202).send(`Tarefa encontrada com sucesso
       ${list}`);
     })
     .catch((err) => {
@@ -44,10 +44,10 @@ router.post("/new", async (req, res) => {
     });
 });
 
-router.put("/uptade/:id", async (req, res) => {
+router.put("/update/:id", async (req, res) => {
   await List.updateOne({ _id: id(req) }, body(req))
     .then(() => {
-      res.status(200).send("Tarefa alterado com sucesso");
+      res.status(200).send("Tarefa alterada com sucesso");
     })
     .catch((err) => {
       Controller.Error400infos(req, res);
