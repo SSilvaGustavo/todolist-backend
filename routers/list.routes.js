@@ -24,8 +24,7 @@ router.get("/", async (req, res) => {
 router.get("/tarefa/:id", async (req, res) => {
   await List.findOne({ _id: id(req) })
     .then((list) => {
-      res.status(202).send(`Tarefa encontrada com sucesso
-      ${list}`);
+      res.status(202).send(list);
     })
     .catch((err) => {
       Controller.Error400(res).send("ID de Tarefa invalido, tente novamente");
