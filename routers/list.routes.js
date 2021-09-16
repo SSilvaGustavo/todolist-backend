@@ -59,8 +59,9 @@ router.delete("/delete/:id", (req, res) => {
     .then(() => {
       if (id(req) === null) {
         res.send("ID invalido");
-      }else{
-      res.status(200).send("Tarefa removida com sucesso");}
+      } else {
+        res.status(200).send("Tarefa removida com sucesso");
+      }
     })
     .catch((err) => {
       Controller.Error400(res).send("ID de Tarefa invalido, tente novamente");

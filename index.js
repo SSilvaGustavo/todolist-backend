@@ -1,12 +1,12 @@
 if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
-};
+  require("dotenv").config();
+}
 const express = require("express");
 
 const cors = require("cors");
 const corsOptions = {
-    origin: "http://localhost:3000",
-    optionsSucessStatus: 200,
+  origin: "http://localhost:3000",
+  optionsSucessStatus: 200,
 };
 
 const app = express();
@@ -26,10 +26,10 @@ Conn(db_url, db_user, db_pass, db_data);
 const list = require("./routers/list.routes");
 app.use("/list", list);
 
-app.get('*', function(req, res){
-    res.status(404).send('Pagina Invalida');
-  });
+app.get("*", function (req, res) {
+  res.status(404).send("Pagina Invalida");
+});
 
 app.listen(process.env.PORT || port, () => {
-    console.info(`Servidor está rodando na porta ${port}`)
+  console.info(`Servidor está rodando na porta ${port}`);
 });
